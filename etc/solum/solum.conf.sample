@@ -14,12 +14,8 @@
 # Size of RPC connection pool. (integer value)
 #rpc_conn_pool_size=30
 
-# Modules of exceptions that are permitted to be recreated
-# upon receiving exception data from an rpc call. (list value)
-#allowed_rpc_exception_modules=oslo.messaging.exceptions,nova.exception,cinder.exception,exceptions
-
 # Qpid broker hostname. (string value)
-#qpid_hostname=localhost
+#qpid_hostname=solum
 
 # Qpid broker port. (integer value)
 #qpid_port=5672
@@ -76,7 +72,7 @@
 
 # The RabbitMQ broker address where a single node is used.
 # (string value)
-#rabbit_host=localhost
+#rabbit_host=solum
 
 # The RabbitMQ broker port where a single node is used.
 # (integer value)
@@ -155,15 +151,6 @@
 
 # Heartbeat time-to-live. (integer value)
 #matchmaker_heartbeat_ttl=600
-
-# Host to locate redis. (string value)
-#host=127.0.0.1
-
-# Use this port to connect to redis host. (integer value)
-#port=6379
-
-# Password for Redis server (optional). (string value)
-#password=<None>
 
 # Size of RPC greenthread pool. (integer value)
 #rpc_thread_pool_size=64
@@ -380,6 +367,17 @@
 #host=127.0.0.1
 
 
+[camp]
+
+#
+# Options defined in solum.api.controllers.root
+#
+
+# This option enables or disables support for the CAMP API.
+# Default value is True. (boolean value)
+#camp_enabled=true
+
+
 [conductor]
 
 #
@@ -390,7 +388,7 @@
 #topic=solum-conductor
 
 # The location of the conductor rpc queue (string value)
-#host=localhost
+#host=solum
 
 
 [database]
@@ -491,7 +489,7 @@
 #topic=solum-deployer
 
 # The location of the deployer rpc queue (string value)
-#host=localhost
+#host=solum
 
 # The deployer endpoint to deploy (string value)
 #handler=heat
@@ -723,6 +721,22 @@
 #insecure=false
 
 
+[matchmaker_redis]
+
+#
+# Options defined in oslo.messaging
+#
+
+# Host to locate redis. (string value)
+#host=127.0.0.1
+
+# Use this port to connect to redis host. (integer value)
+#port=6379
+
+# Password for Redis server (optional). (string value)
+#password=<None>
+
+
 [matchmaker_ring]
 
 #
@@ -801,7 +815,7 @@
 #topic=solum-worker
 
 # The location of the build rpc queue (string value)
-#host=localhost
+#host=solum
 
 # The worker endpoint to employ (string value)
 #handler=shell
